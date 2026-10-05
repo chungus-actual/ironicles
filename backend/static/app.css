@@ -230,9 +230,12 @@ svg { display: block; }
 .icon-btn:active { transform: scale(.9); }
 .icon-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .text-btn { padding: 9px 14px; border-radius: 13px; background: var(--card); box-shadow: var(--shadow); font-weight: 700; font-size: 14px; color: var(--accent); }
-.pager { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 -18px; overscroll-behavior-x: contain; }
+/* months slide sideways inside the card and nowhere else: no bleed past the card's edges, no vertical
+   scroll axis for iOS to rubber-band, overscroll kept in the pager. Vertical drags still scroll the page. */
+.pager { display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none;
+  overscroll-behavior: contain; touch-action: pan-x pan-y; }
 .pager::-webkit-scrollbar { display: none; }
-.month { flex: 0 0 100%; scroll-snap-align: center; scroll-snap-stop: always; padding: 0 18px; }
+.month { flex: 0 0 100%; scroll-snap-align: center; scroll-snap-stop: always; padding: 0 14px; }
 .dow, .grid { display: grid; grid-template-columns: repeat(7, 1fr); }
 .dow span { text-align: center; font-size: 12px; font-weight: 800; color: var(--mute); padding: 6px 0; }
 .grid { row-gap: 4px; }
