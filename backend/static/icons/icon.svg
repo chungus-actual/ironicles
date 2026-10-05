@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9a2a57"/><stop offset=".55" stop-color="#6e1c42"/><stop offset="1" stop-color="#3e0f27"/>
+    </linearGradient>
+    <linearGradient id="pl" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#efe2dc"/><stop offset=".18" stop-color="#fbf5f1"/><stop offset="1" stop-color="#fffaf7"/>
+    </linearGradient>
+    <linearGradient id="pr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#efe2dc"/><stop offset=".18" stop-color="#fdf8f5"/><stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="drop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f03a52"/><stop offset="1" stop-color="#a50f2d"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <!-- cover and page edges under the spread -->
+  <path d="M256 198C206 172 146 166 84 174V394C146 386 206 394 256 420C306 394 366 386 428 394V174C366 166 306 172 256 198Z" fill="#2b0a1c" opacity=".45"/>
+  <path d="M256 190C208 166 150 160 92 166V382C150 376 208 384 256 408C304 384 362 376 420 382V166C362 160 304 166 256 190Z" fill="#e8d3cf"/>
+  <!-- the two pages -->
+  <path d="M256 180C214 156 160 148 102 154V370C160 366 214 374 256 398Z" fill="url(#pl)"/>
+  <path d="M256 180C298 156 352 148 410 154V370C352 366 298 374 256 398Z" fill="url(#pr)"/>
+  <path d="M256 180V398" stroke="#d8c0bd" stroke-width="3"/>
+  <!-- lines of writing on the left page -->
+  <g stroke="#e3cfd0" stroke-width="7" stroke-linecap="round" fill="none">
+    <path d="M128 200C164 196 196 200 228 210"/>
+    <path d="M128 232C164 228 196 232 228 242"/>
+    <path d="M128 264C164 260 196 264 228 274"/>
+    <path d="M128 296C160 293 186 296 210 302"/>
+  </g>
+  <!-- the drop, on the right page -->
+  <ellipse cx="334" cy="330" rx="40" ry="8" fill="#a50f2d" opacity=".16"/>
+  <path d="M334 206C360 244 376 268 376 292A42 42 0 0 1 292 292C292 268 308 244 334 206Z" fill="url(#drop)"/>
+  <ellipse cx="318" cy="286" rx="8" ry="14" fill="#fff" opacity=".38" transform="rotate(-18 318 286)"/>
+  <circle cx="378" cy="230" r="5" fill="#c71b3b" opacity=".85"/>
+</svg>

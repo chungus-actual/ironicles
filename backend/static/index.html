@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ironicles</title>
+<meta name="description" content="Ironicles — a private cycle tracker.">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#fbf6f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141013" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ironicles">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v=2">
+<link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/app.css?v={{v}}">
+</head>
+<body>
+<header class="bar" id="bar" aria-hidden="true"><span id="bar-title">Today</span></header>
+<div class="ptr" id="ptr" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1-7.4 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M3 4.5 4.6 9l4.5-1.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+<main id="views">
+  <section class="view" id="v-today" data-title="Today"></section>
+  <section class="view" id="v-calendar" data-title="Calendar" hidden></section>
+  <section class="view" id="v-journal" data-title="Journal" hidden></section>
+  <section class="view" id="v-insights" data-title="Insights" hidden></section>
+</main>
+
+<nav class="tabbar" id="tabbar" aria-label="Sections">
+  <button class="tab on" data-tab="today" aria-label="Today">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/></svg>
+    <span>Today</span></button>
+  <button class="tab" data-tab="calendar" aria-label="Calendar">
+    <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+    <span>Calendar</span></button>
+  <button class="tab add" id="tab-add" aria-label="Log">
+    <span class="add-dot"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+  <button class="tab" data-tab="journal" aria-label="Journal">
+    <svg viewBox="0 0 24 24"><path d="M6 3.5h10.5A2.5 2.5 0 0 1 19 6v14.5H7A2.5 2.5 0 0 1 4.5 18V5A1.5 1.5 0 0 1 6 3.5Z"/><path d="M4.5 18A2.5 2.5 0 0 1 7 15.5h12M9 8h6"/></svg>
+    <span>Journal</span></button>
+  <button class="tab" data-tab="insights" aria-label="Insights">
+    <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+    <span>Insights</span></button>
+</nav>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-backdrop" id="sheet-backdrop"></div>
+  <div class="sheet-panel" id="sheet-panel" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="sheet-grab" id="sheet-grab"><span></span></div>
+    <div class="sheet-body" id="sheet-body"></div>
+  </div>
+</div>
+
+<div class="lock" id="lock" hidden>
+  <div class="lock-box" id="lock-box">
+    <img src="/icons/icon-192.png?v=2" alt="" width="84" height="84">
+    <h1>Ironicles</h1>
+    <p>Enter your passcode</p>
+    <form id="lock-form" autocomplete="on">
+      <input type="text" name="username" value="ironicles" autocomplete="username" hidden>
+      <input type="password" id="lock-pass" name="password" autocomplete="current-password" placeholder="Passcode" aria-label="Passcode">
+      <button class="btn primary block" type="submit">Unlock</button>
+    </form>
+    <div class="lock-err" id="lock-err" role="alert"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/app.js?v={{v}}" defer></script>
+</body>
+</html>

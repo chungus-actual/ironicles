@@ -1,0 +1,12 @@
+services:
+  ironicles:
+    build: .
+    container_name: ironicles
+    restart: unless-stopped
+    ports:
+      - "8889:8889"
+    environment:
+      - TZ=${TZ:-UTC}                     # the app also uses the phone's own date; this is for logs
+      # - IRONICLES_PASSCODE=change-me     # optional: pin the passcode here instead of setting it in the app
+    volumes:
+      - ./data:/data                      # ironicles.db lives here — back this folder up
